@@ -68,6 +68,18 @@ export const REVIEWS: Review[] = [
     name: 'Jay Aston',
     rating: 5,
     text: "Professional, reliable… gentle and caring… we won’t take our pet to anyone else."
+  },
+  {
+    id: '11',
+    name: 'Isabelle Woolfe',
+    rating: 5,
+    text: "We took Maple to Jan at Suburb groomers who did a fantastic job! The moment from meeting Jan you know she truely cares about her job and giving the dogs the best cut possible. She did an amazing job and definitely recommend for anyone wanting a job done by someone so passionate about what she does ☺️"
+  },
+  {
+    id: '12',
+    name: 'Hannah',
+    rating: 5,
+    text: "Genuinely lives up to it's name -- Superb! This is Lilla's third time to Jan, and as always she does an amazing job in turning her from shaggy to round and fluffy!! Thank you again Superb Dog Grooming!!"
   }
 ];
 
@@ -175,15 +187,15 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     id: 'ba1', 
     category: 'before-after', 
     caption: 'Matted to Magnificent', 
-    beforeUrl: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=600&auto=format&fit=crop',
-    afterUrl: 'https://images.unsplash.com/photo-1596272875729-ed2ff7d6d9c5?q=80&w=600&auto=format&fit=crop'
+    beforeUrl: 'https://www.shutterstock.com/image-photo/before-after-dog-grooming-bichon-600nw-2302391451.jpg',
+    afterUrl: 'https://www.shutterstock.com/image-photo/before-after-dog-grooming-bichon-600nw-2302391451.jpg'
   },
   { 
     id: 'ba2', 
     category: 'before-after', 
     caption: 'Summer Clip Transformation', 
-    beforeUrl: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600&auto=format&fit=crop',
-    afterUrl: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=600&auto=format&fit=crop'
+    beforeUrl: 'https://pamperedfloof.com.au/wp-content/uploads/2024/03/IMG_0839.jpg',
+    afterUrl: 'https://pamperedfloof.com.au/wp-content/uploads/2024/03/IMG_0839.jpg'
   },
   { 
     id: 'ba3', 
