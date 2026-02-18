@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy:
+    if: ${{ secrets.NETLIFY_AUTH_TOKEN != '' && secrets.NETLIFY_SITE_ID != '' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +34,11 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+  missing-secrets:
+    if: ${{ secrets.NETLIFY_AUTH_TOKEN == '' || secrets.NETLIFY_SITE_ID == '' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Skip deploy
+        run: echo "Skipping Netlify deploy because NETLIFY_AUTH_TOKEN or NETLIFY_SITE_ID is not set."
