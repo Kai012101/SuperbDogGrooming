@@ -1,18 +1,10 @@
 import React from 'react';
-import { SERVICES } from '../constants';
+import { BOOKING_URL, SERVICES } from '../constants';
 import { PawPrint, Sparkles } from 'lucide-react';
 
-interface ServicesProps {
-  onBook: () => void;
-}
-
-const Services: React.FC<ServicesProps> = ({ onBook }) => {
+const Services: React.FC = () => {
   const handleBookClick = () => {
-    if (window.innerWidth < 768) {
-      window.location.href = "tel:0406298111";
-    } else {
-      onBook();
-    }
+    window.open(BOOKING_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (

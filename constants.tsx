@@ -3,6 +3,7 @@ import React from 'react';
 
 export const PHONE_NUMBER = "0406 298 111";
 export const PHONE_LINK = "tel:0406298111";
+export const BOOKING_URL = "https://cosmic-selkie-a2f022.netlify.app/opus/book";
 export const ADDRESS = "455 Wellington Rd, Wheelers Hill VIC 3150";
 export const EMAIL = "info@superbdoggrooming.com.au";
 export const INSTAGRAM_LINK = "https://www.instagram.com/superb.doggrooming/?hl=en";

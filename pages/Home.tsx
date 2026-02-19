@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Page } from '../types';
+import { BOOKING_URL } from '../constants';
 
 interface HomeProps {
   onNavigate: (page: Page) => void;
@@ -59,7 +60,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                 <button 
-                   onClick={() => onNavigate('contact')}
+                   onClick={() => window.open(BOOKING_URL, '_blank', 'noopener,noreferrer')}
                    className="bg-slate-800 text-white px-8 py-4 rounded-full font-bubble text-xl border-2 border-transparent hover:border-black hover:bg-white hover:text-black transition-all shadow-xl hover:shadow-none transform hover:scale-95"
                 >
                   Book Appointment
@@ -156,7 +157,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             <div className="relative z-10">
                <h2 className="font-bubble text-white text-4xl md:text-5xl mb-6">Ready to make your pet fabulous?</h2>
                <p className="text-white font-display text-xl mb-8 opacity-90">Spots fill up fast! Don't let your dog have a bad hair day.</p>
-               <button onClick={() => onNavigate('contact')} className="bg-white text-black px-10 py-4 rounded-full font-bubble text-xl hover:scale-105 transition-transform shadow-lg">
+               <button onClick={() => window.open(BOOKING_URL, '_blank', 'noopener,noreferrer')} className="bg-white text-black px-10 py-4 rounded-full font-bubble text-xl hover:scale-105 transition-transform shadow-lg">
                  Book Now
                </button>
             </div>

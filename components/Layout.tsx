@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Instagram, Facebook, MapPin, Scissors, Calendar } from 'lucide-react';
 import { Page } from '../types';
-import { PHONE_NUMBER, PHONE_LINK, ADDRESS, INSTAGRAM_LINK, FACEBOOK_LINK } from '../constants';
-import BookingModal from './BookingModal';
+import { PHONE_NUMBER, PHONE_LINK, ADDRESS, INSTAGRAM_LINK, FACEBOOK_LINK, BOOKING_URL } from '../constants';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,7 +11,6 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showBookingModal, setShowBookingModal] = useState(false);
 
   // Scroll to top when page changes
   useEffect(() => {
@@ -25,11 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate }) => 
   };
 
   const handleBookClick = () => {
-    if (window.innerWidth < 768) {
-      window.location.href = PHONE_LINK;
-    } else {
-      setShowBookingModal(true);
-    }
+    window.open(BOOKING_URL, '_blank', 'noopener,noreferrer');
   };
 
   const navItems: { label: string; id: Page }[] = [
@@ -169,8 +163,6 @@ const Layout: React.FC<LayoutProps> = ({ children, activePage, onNavigate }) => 
       <footer className="md:ml-64 border-t border-slate-200 py-8 text-center text-slate-400 text-sm bg-white">
         &copy; {new Date().getFullYear()} Superb Dog Grooming.
       </footer>
-
-      <BookingModal isOpen={showBookingModal} onClose={() => setShowBookingModal(false)} />
     </div>
   );
 };

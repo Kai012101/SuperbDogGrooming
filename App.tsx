@@ -7,7 +7,6 @@ import Reviews from './pages/Reviews';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import { Page } from './types';
-import BookingModal from './components/BookingModal';
 
 // Schema Markup for LocalBusiness
 const SCHEMA_DATA = {
@@ -48,7 +47,6 @@ const SCHEMA_DATA = {
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Scroll to top on page change
   useEffect(() => {
@@ -70,7 +68,7 @@ function App() {
       case 'home':
         return <Home onNavigate={setCurrentPage} />;
       case 'services':
-        return <Services onBook={() => setIsModalOpen(true)} />;
+        return <Services />;
       case 'price-list':
         return <PriceList />;
       case 'reviews':
@@ -94,8 +92,6 @@ function App() {
       <Layout activePage={currentPage} onNavigate={setCurrentPage}>
         {renderPage()}
       </Layout>
-
-      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }
